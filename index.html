@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberNox GreyHat | Digital Recovery Partner</title>
+<meta name="description" content="CyberNox GreyHat — digital investigations, cryptocurrency tracing, cybersecurity assistance and lost-device investigation.">
+<style>
+:root{
+  --green:#00ff66;
+  --green2:#00d957;
+  --dark:#030805;
+  --panel:rgba(3,12,7,.88);
+  --line:rgba(0,255,102,.72);
+  --text:#f3f7f4;
+  --muted:#b9c4bd;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:#050806 url("cybernox-background.png") center top/cover fixed no-repeat;
+  min-height:100vh;
+  line-height:1.55;
+}
+body:before{
+  content:"";
+  position:fixed; inset:0; z-index:-1;
+  background:
+    linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.88)),
+    repeating-linear-gradient(90deg,transparent 0 90px,rgba(0,255,102,.035) 91px 92px);
+  pointer-events:none;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:auto}
+.glow{color:var(--green);text-shadow:0 0 12px rgba(0,255,102,.55)}
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(1,7,4,.93);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(10px);
+}
+.nav{
+  min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px
+}
+.logo{
+  display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px
+}
+.logo-mark{
+  width:52px;height:52px;border:2px solid var(--green);border-radius:50%;
+  display:grid;place-items:center;font-size:25px;
+  box-shadow:0 0 22px rgba(0,255,102,.35)
+}
+.logo strong{font-size:25px}
+.logo span{display:block;font-size:12px;letter-spacing:5px;color:#ddd;text-align:center}
+nav{display:flex;gap:28px;font-weight:700;font-size:14px}
+nav a:hover{color:var(--green);text-shadow:0 0 10px var(--green)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:1px solid var(--green);color:var(--green);padding:12px 20px;
+  border-radius:4px;font-weight:800;letter-spacing:.5px;
+  background:rgba(0,255,102,.04);box-shadow:0 0 15px rgba(0,255,102,.12);
+  transition:.2s;
+}
+.btn:hover{background:var(--green);color:#001507;box-shadow:0 0 28px rgba(0,255,102,.4)}
+.hero{
+  min-height:650px;display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.72) 43%,rgba(0,0,0,.15) 100%);
+}
+.binary{
+  position:absolute;inset:0;opacity:.16;overflow:hidden;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(180deg,transparent 0 28px,rgba(0,255,102,.18) 29px 30px);
+}
+.binary:after{
+  content:"01001101 01100001 01110100 01110010 01101001 01111000 01001110 01101111 01111000";
+  position:absolute;inset:-50px;
+  color:var(--green);font-family:monospace;font-size:20px;line-height:38px;
+  word-spacing:26px;transform:rotate(-4deg);
+  text-shadow:0 0 10px var(--green);
+}
+.hero-content{padding:100px 0;max-width:610px}
+.kicker{color:var(--green);font-weight:900;letter-spacing:3px;font-size:13px}
+h1{font-size:clamp(42px,6vw,76px);line-height:1.02;margin:15px 0 22px;text-transform:uppercase}
+h1 span{color:var(--green);text-shadow:0 0 20px rgba(0,255,102,.35)}
+.hero p{color:#d5ddd8;max-width:570px;font-size:17px}
+.hero-actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.section{padding:75px 0;background:rgba(1,7,4,.84);border-top:1px solid rgba(0,255,102,.18)}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title small{color:var(--green);font-weight:900;letter-spacing:4px}
+.section-title h2{font-size:38px;text-transform:uppercase;margin-top:6px}
+.section-title h2:before,.section-title h2:after{
+  content:"";display:inline-block;width:70px;height:2px;background:var(--green);
+  vertical-align:middle;margin:0 20px;box-shadow:0 0 10px var(--green)
+}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.card{
+  min-height:270px;padding:26px 20px;text-align:center;
+  background:linear-gradient(180deg,rgba(8,26,15,.93),rgba(0,8,4,.95));
+  border:1px solid rgba(0,255,102,.65);
+  box-shadow:inset 0 0 30px rgba(0,255,102,.035),0 0 12px rgba(0,255,102,.08);
+  position:relative;
+}
+.card:before{content:"";position:absolute;inset:0;border-top:2px solid var(--green);opacity:.2}
+.icon{
+  width:58px;height:58px;margin:0 auto 17px;border:1px solid var(--green);
+  border-radius:50%;display:grid;place-items:center;color:var(--green);font-size:26px;
+  box-shadow:0 0 18px rgba(0,255,102,.2)
+}
+.card h3{font-size:17px;text-transform:uppercase;margin-bottom:10px}
+.card p{font-size:13px;color:var(--muted)}
+.card a{display:inline-block;margin-top:18px;color:var(--green);font-weight:800;font-size:12px}
+.crypto{
+  margin-top:30px;padding:40px;border:1px solid var(--green);
+  background:
+    linear-gradient(90deg,rgba(0,255,102,.09),rgba(0,0,0,.85)),
+    radial-gradient(circle at 15% 50%,rgba(0,255,102,.18),transparent 25%);
+  display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center
+}
+.crypto h3{font-size:34px;color:var(--green);text-transform:uppercase}
+.crypto p{color:#d3dbd6;margin:10px 0}
+.steps{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;color:var(--green);font-weight:900;letter-spacing:1px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(0,255,102,.45)}
+.why-item{padding:30px;border-right:1px solid rgba(0,255,102,.3)}
+.why-item:last-child{border-right:0}
+.why-item b{display:block;color:var(--green);font-size:18px;margin-bottom:8px}
+.why-item p{font-size:13px;color:var(--muted)}
+.contact{
+  padding:42px 0;background:rgba(0,0,0,.9);border-top:1px solid var(--green)
+}
+.contact-row{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.contact strong{color:var(--green);display:block;font-size:13px;letter-spacing:2px}
+.contact .big{font-size:25px;font-weight:900}
+footer{
+  padding:25px 0;text-align:center;background:#020402;color:#8e9b93;
+  border-top:1px solid rgba(0,255,102,.25);letter-spacing:3px;font-size:11px
+}
+@media(max-width:1000px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .why{grid-template-columns:repeat(2,1fr)}
+  .why-item:nth-child(2){border-right:0}
+  .why-item:nth-child(-n+2){border-bottom:1px solid rgba(0,255,102,.3)}
+  .crypto{grid-template-columns:1fr}
+  nav{display:none}
+}
+@media(max-width:600px){
+  .nav{min-height:68px}
+  .logo strong{font-size:19px}.logo-mark{width:42px;height:42px}
+  .hero{min-height:590px}.hero-content{padding:80px 0}
+  h1{font-size:45px}
+  .cards,.why{grid-template-columns:1fr}
+  .why-item{border-right:0!important;border-bottom:1px solid rgba(0,255,102,.3)}
+  .why-item:last-child{border-bottom:0}
+  .contact-row{flex-direction:column;align-items:flex-start}
+  .section-title h2:before,.section-title h2:after{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home" aria-label="CyberNox GreyHat home">
+      <div class="logo-mark">N</div>
+      <div><strong>CYBER<span class="glow">NOX</span></strong><span>GREYHAT</span></div>
+    </a>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#about">ABOUT US</a>
+      <a href="#why">WHY US</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <a class="btn" href="#contact">GET IN TOUCH ↗</a>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="binary"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="kicker">TRUSTED • DISCREET • PROFESSIONAL</div>
+      <h1>YOUR DIGITAL<br><span>RECOVERY PARTNER</span></h1>
+      <p>
+        At CyberNox GreyHat, we assist individuals with all of their challenging
+        hacking needs. Along with our greyhat skills and legal methods, we also
+        recover crypto that has gone missing. Additionally, we help people who
+        have misplaced valuable possessions, devices, or money by acting as
+        private investigators.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#services">OUR SERVICES →</a>
+        <a class="btn" href="#contact">CONTACT US</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-title">
+      <small>OUR SERVICES</small>
+      <h2>WHAT WE CAN DO FOR YOU</h2>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="icon">₿</div>
+        <h3>Crypto Trace & Recovery</h3>
+        <p>We trace, monitor and track lost crypto using advanced blockchain analysis and transaction tracking.</p>
+        <a href="#contact">LEARN MORE →</a>
+      </article>
+      <article class="card">
+        <div class="icon">⌾</div>
+        <h3>Cybersecurity & Grey-Hat Services</h3>
+        <p>We provide professional cybersecurity assistance for individuals and businesses dealing with digital threats, vulnerabilities and suspicious activity.</p>
+        <a href="#contact">LEARN MORE →</a>
+      </article>
+      <article class="card">
+        <div class="icon">⌕</div>
+        <h3>Private Investigations</h3>
+        <p>We help with lawful investigations for lost devices, property, money and other valuable possessions.</p>
+        <a href="#contact">LEARN MORE →</a>
+      </article>
+      <article class="card">
+        <div class="icon">▣</div>
+        <h3>Lost Device Assistance</h3>
+        <p>We help investigate missing phones, computers and other electronic devices using available lawful information and digital evidence.</p>
+        <a href="#contact">LEARN MORE →</a>
+      </article>
+      <article class="card">
+        <div class="icon">£</div>
+        <h3>Missing Money Investigation</h3>
+        <p>When money has disappeared or a suspicious transaction needs to be investigated, we help organize evidence and trace relevant digital activity.</p>
+        <a href="#contact">LEARN MORE →</a>
+      </article>
+    </div>
+
+    <div class="crypto">
+      <div>
+        <small class="glow">CRYPTOCURRENCY INVESTIGATION</small>
+        <h3>LOST CRYPTO?</h3>
+        <p>We investigate cryptocurrency transactions and follow blockchain activity to help identify transaction paths and potentially relevant wallets.</p>
+        <div class="steps"><span>TRACE →</span><span>ANALYZE →</span><span>MONITOR →</span><span>REPORT</span></div>
+      </div>
+      <div>
+        <h3 style="font-size:23px;color:#fff">WE ALSO TRACE, MONITOR<br><span class="glow">AND TRACK LOST CRYPTO</span></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-title">
+      <h2>WHY <span class="glow">CYBERNOX GREYHAT?</span></h2>
+    </div>
+    <div class="why">
+      <div class="why-item"><b>AUTHORIZED</b><p>We focus on lawful and authorized investigations.</p></div>
+      <div class="why-item"><b>DIGITAL</b><p>Blockchain analysis, cybersecurity investigation and digital evidence.</p></div>
+      <div class="why-item"><b>DISCREET</b><p>Client information and investigation details are handled professionally.</p></div>
+      <div class="why-item"><b>INVESTIGATIVE</b><p>We follow evidence and transaction trails rather than making unsupported promises.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-row">
+    <div>
+      <strong>CALL US NOW</strong>
+      <div class="big">+44 7928 388124</div>
+    </div>
+    <div>
+      <strong>OUR ADDRESS</strong>
+      <div class="big">London, Moris Road 87BB</div>
+    </div>
+    <a class="btn" href="tel:+447928388124">CONTACT US ↗</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  CYBERNOX GREYHAT &nbsp; | &nbsp; TRACE. INVESTIGATE. RECOVER.
+</footer>
+
+</body>
+</html>
